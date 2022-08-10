@@ -19,13 +19,8 @@ public class test4 {
         try {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
-
-//            List<Employee> emps = session.createQuery("from Employee")
-//                            .getResultList();
-
-
-            for (Employee e: emps)
-                System.out.println(e);
+            Employee emp = session.get(Employee.class, 1);
+            emp.setSalary(10000);
 
             session.getTransaction().commit();
 
