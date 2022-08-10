@@ -17,14 +17,20 @@ public class test2 {
         try {
             Session session = factory.getCurrentSession();
 
-            Employee emp = new Employee("Nik", "Josh"
-                    , "IT", 500);
+            Employee emp = new Employee("Oleg", "Sidorov"
+                    , "HR", 500);
             session.beginTransaction();
             session.save(emp);
+//            session.getTransaction().commit();
+
+            int myId = emp.getId();
+//            session = factory.getCurrentSession();
+//            session.beginTransaction();
+            Employee employee = session.get(Employee.class, myId);
             session.getTransaction().commit();
+            System.out.println(employee);
 
             System.out.println("done!");
-            System.out.println(emp);
         }
         finally {
             factory.close();
