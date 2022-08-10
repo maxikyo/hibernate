@@ -20,12 +20,17 @@ public class test3 {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-            List<Employee> emps = session.createQuery("from Employee")
-                            .getResultList();
+//            List<Employee> emps = session.createQuery("from Employee")
+//                            .getResultList();
+            List<Employee> emps = session.createQuery("from Employee " +
+                    "where name = 'Nik'")
+                    .getResultList();
+
             for (Employee e: emps)
                 System.out.println(e);
 
             session.getTransaction().commit();
+
             System.out.println("done!");
         }
         finally {
