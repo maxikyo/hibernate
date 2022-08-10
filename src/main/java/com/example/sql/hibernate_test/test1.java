@@ -17,11 +17,13 @@ public class test1 {
         try {
             Session session = factory.getCurrentSession();
 
-            Employee emp = new Employee("Max", "Holovanov"
-                    , "IT", 300);
+            Employee emp = new Employee("Ondra", "David"
+                    , "HR", 250);
             session.beginTransaction();
             session.save(emp);
             session.getTransaction().commit();
+
+            System.out.println("done!");
         }
         finally {
             factory.close();
