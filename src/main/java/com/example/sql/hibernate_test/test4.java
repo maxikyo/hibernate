@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
-public class test3 {
+public class test4 {
     public static void main(String[] args) {
 
         SessionFactory factory = new Configuration()
@@ -22,9 +22,7 @@ public class test3 {
 
 //            List<Employee> emps = session.createQuery("from Employee")
 //                            .getResultList();
-            List<Employee> emps = session.createQuery("from Employee " +
-                    "where firstname = 'Nik' AND salary>650")
-                    .getResultList();
+
 
             for (Employee e: emps)
                 System.out.println(e);
