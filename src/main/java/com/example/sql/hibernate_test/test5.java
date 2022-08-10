@@ -20,6 +20,9 @@ public class test5 {
 //            Employee emp = session.get(Employee.class, 3);
 //            session.delete((emp));
 
+            session.createQuery("delete Employee " +
+                    "where firstname = 'Nik'").executeUpdate(); //update для добавления и удаления
+
             session.getTransaction().commit();
 
             System.out.println("done!");
