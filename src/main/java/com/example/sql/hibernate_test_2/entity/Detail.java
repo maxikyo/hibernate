@@ -22,7 +22,7 @@ public class Detail {
     private String email;
 
     @OneToOne(mappedBy = "empDetail",
-    cascade = CascadeType.ALL)
+    cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     private Employee employee;
 
     public Detail() {
