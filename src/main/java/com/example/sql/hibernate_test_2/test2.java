@@ -34,11 +34,21 @@ public class test2 {
 //
 //            System.out.println("done!");
 
+//            session = factory.getCurrentSession();
+//
+//            session.beginTransaction();
+//            Detail detail = session.get(Detail.class, 4);
+//            System.out.println(detail.getEmployee());
+//
+//            session.getTransaction().commit();
+//
+//            System.out.println("done!");
+
             session = factory.getCurrentSession();
 
             session.beginTransaction();
             Detail detail = session.get(Detail.class, 4);
-            System.out.println(detail.getEmployee());
+            session.delete(detail);
 
             session.getTransaction().commit();
 
