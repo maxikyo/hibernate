@@ -18,17 +18,27 @@ public class test2 {
 
         Session session = null;
         try {
-          session = factory.getCurrentSession();
-            Employee employee = new Employee("Nikolay", "Ivanov", "HR"
-                    ,850);
-            Detail detail = new Detail("New-York", "33324243231"
-                    ,"nikolay@gmail.com");
+//          session = factory.getCurrentSession();
+//            Employee employee = new Employee("Nikolay", "Ivanov", "HR"
+//                    ,850);
+//            Detail detail = new Detail("New-York", "33324243231"
+//                    ,"nikolay@gmail.com");
+//
+//            employee.setEmpDetail(detail);
+//            detail.setEmployee(employee);
+//            session.beginTransaction();
+//
+//            session.save(detail);
+//
+//            session.getTransaction().commit();
+//
+//            System.out.println("done!");
 
-            employee.setEmpDetail(detail);
-            detail.setEmployee(employee);
+            session = factory.getCurrentSession();
+
             session.beginTransaction();
-
-            session.save(detail);
+            Detail detail = session.get(Detail.class, 4);
+            System.out.println(detail.getEmployee());
 
             session.getTransaction().commit();
 
