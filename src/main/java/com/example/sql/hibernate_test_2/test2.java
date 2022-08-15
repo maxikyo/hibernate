@@ -19,11 +19,12 @@ public class test2 {
         Session session = null;
         try {
           session = factory.getCurrentSession();
-            Employee employee = new Employee("Misha", "Sidorov", "HR"
+            Employee employee = new Employee("Nikolay", "Ivanov", "HR"
                     ,850);
-            Detail detail = new Detail("London", "324243231"
-                    ,"mishuj@gmail.com");
+            Detail detail = new Detail("New-York", "33324243231"
+                    ,"nikolay@gmail.com");
 
+            employee.setEmpDetail(detail);
             detail.setEmployee(employee);
             session.beginTransaction();
 
