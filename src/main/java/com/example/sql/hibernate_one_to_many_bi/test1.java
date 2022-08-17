@@ -37,18 +37,28 @@ public class test1 {
 //
 //            System.out.println("done!");
 
+//            session = factory.getCurrentSession();
+//
+//
+//            session.beginTransaction();
+//            Employee employee = session.get(Employee.class, 1);
+//            System.out.println(employee);
+//            System.out.println(employee.getDepartment());
+//
+//            session.getTransaction().commit();
+//
+//            System.out.println("done!");
+
             session = factory.getCurrentSession();
 
 
             session.beginTransaction();
-            Department department = session.get(Department.class, 1);
-            System.out.println(department);
-            System.out.println(department.getEmps());
+            Employee employee = session.get(Employee.class, 1);
 
+            session.delete(employee);
             session.getTransaction().commit();
 
             System.out.println("done!");
-
 
         }
         finally {
