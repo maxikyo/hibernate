@@ -19,26 +19,26 @@ public class test1 {
 
         Session session = null;
         try {
-            session = factory.getCurrentSession();
-            Department dep = new Department("Sales", 1500,
-                    800);
-            Employee emp1 = new Employee("Maxim", "Holovanov",
-                    800);
-            Employee emp2 = new Employee("Elena", "Smirnova",
-                    1000);
-            Employee emp3 = new Employee("Anton", "Sidorov",
-                    1200);
-
-            dep.addEmployeeToDepartment(emp1);
-            dep.addEmployeeToDepartment(emp2);
-            dep.addEmployeeToDepartment(emp3);
-
-            session.beginTransaction();
-            session.save(dep);
-
-            session.getTransaction().commit();
-
-            System.out.println("done!");
+//            session = factory.getCurrentSession();
+//            Department dep = new Department("Sales", 1500,
+//                    800);
+//            Employee emp1 = new Employee("Maxim", "Holovanov",
+//                    800);
+//            Employee emp2 = new Employee("Elena", "Smirnova",
+//                    1000);
+//            Employee emp3 = new Employee("Anton", "Sidorov",
+//                    1200);
+//
+//            dep.addEmployeeToDepartment(emp1);
+//            dep.addEmployeeToDepartment(emp2);
+//            dep.addEmployeeToDepartment(emp3);
+//
+//            session.beginTransaction();
+//            session.save(dep);
+//
+//            session.getTransaction().commit();
+//
+//            System.out.println("done!");
 //***********************************************************************
 //            session = factory.getCurrentSession();
 //
@@ -51,6 +51,20 @@ public class test1 {
 //            session.getTransaction().commit();
 //
 //            System.out.println("done!");
+//****************************************************************
+            session = factory.getCurrentSession();
+
+            session.beginTransaction();
+            System.out.println("Get department");
+            Department department = session.get(Department.class, 4);
+            System.out.println("Show department");
+            System.out.println(department);
+            System.out.println("Show emp of the dep");
+            System.out.println(department.getEmps());
+
+            session.getTransaction().commit();
+
+            System.out.println("done!");
 //***********************************************************************
 //            session = factory.getCurrentSession();
 //
