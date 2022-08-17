@@ -1,4 +1,4 @@
-package com.example.sql.hibernate_one_to_meny_bi;
+package com.example.sql.hibernate_one_to_many_bi;
 
 
 import com.example.sql.hibernate_one_to_one.entity.Detail;
