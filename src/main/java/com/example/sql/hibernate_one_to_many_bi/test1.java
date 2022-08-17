@@ -19,23 +19,26 @@ public class test1 {
 
         Session session = null;
         try {
-//            session = factory.getCurrentSession();
-//            Department dep = new Department("IT", 4000,
-//                    800);
-//            Employee emp1 = new Employee("Maxim", "Holovanov",
-//                    800);
-//            Employee emp2 = new Employee("Elena", "Smirnova",
-//                    1000);
-//
-//            dep.addEmployeeToDepartment(emp1);
-//            dep.addEmployeeToDepartment(emp2);
-//
-//            session.beginTransaction();
-//            session.save(dep);
-//
-//            session.getTransaction().commit();
-//
-//            System.out.println("done!");
+            session = factory.getCurrentSession();
+            Department dep = new Department("Sales", 1500,
+                    800);
+            Employee emp1 = new Employee("Maxim", "Holovanov",
+                    800);
+            Employee emp2 = new Employee("Elena", "Smirnova",
+                    1000);
+            Employee emp3 = new Employee("Anton", "Sidorov",
+                    1200);
+
+            dep.addEmployeeToDepartment(emp1);
+            dep.addEmployeeToDepartment(emp2);
+            dep.addEmployeeToDepartment(emp3);
+
+            session.beginTransaction();
+            session.save(dep);
+
+            session.getTransaction().commit();
+
+            System.out.println("done!");
 //***********************************************************************
 //            session = factory.getCurrentSession();
 //
@@ -49,16 +52,16 @@ public class test1 {
 //
 //            System.out.println("done!");
 //***********************************************************************
-            session = factory.getCurrentSession();
-
-
-            session.beginTransaction();
-            Employee employee = session.get(Employee.class, 4);
-
-            session.delete(employee);
-            session.getTransaction().commit();
-
-            System.out.println("done!");
+//            session = factory.getCurrentSession();
+//
+//
+//            session.beginTransaction();
+//            Employee employee = session.get(Employee.class, 4);
+//
+//            session.delete(employee);
+//            session.getTransaction().commit();
+//
+//            System.out.println("done!");
 
         }
         finally {
