@@ -54,17 +54,12 @@ public class Test1 {
 //***********************************************************
             session = factory.getCurrentSession();
 
-            Section section1 = new Section("Volleyball");
-            Section section2 = new Section("Chess");
-            Section section3 = new Section("Math");
-            Child child1 = new Child("Igor", 10);
-            child1.addSectionToChild(section1);
-            child1.addSectionToChild(section2);
-            child1.addSectionToChild(section3);
-
             session.beginTransaction();
 
-            session.save(child1);
+            Section section = session.get(Section.class, 1);
+
+            System.out.println(section);
+            System.out.println(section.getChildren());
 
             session.getTransaction().commit();
             System.out.println("Done!");
