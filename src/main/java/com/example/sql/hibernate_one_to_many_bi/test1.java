@@ -59,11 +59,11 @@ public class test1 {
             Department department = session.get(Department.class, 4);
             System.out.println("Show department");
             System.out.println(department);
-            System.out.println("Show emp of the dep");
-            System.out.println(department.getEmps());
+
 
             session.getTransaction().commit();
-
+            System.out.println("Show emp of the dep");
+            System.out.println(department.getEmps());
             System.out.println("done!");
 //***********************************************************************
 //            session = factory.getCurrentSession();
