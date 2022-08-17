@@ -41,7 +41,6 @@ public class Department {
             emps = new ArrayList<>();
         }
         emps.add(employee);
-        employee.setDepartment(this);
     }
 
     public int getId() {
