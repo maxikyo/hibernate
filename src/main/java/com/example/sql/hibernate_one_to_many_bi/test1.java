@@ -60,6 +60,8 @@ public class test1 {
             System.out.println("Show department");
             System.out.println(department);
 
+            System.out.println("Loading our emps");
+            department.getEmps().get(0);
 
             session.getTransaction().commit();
             System.out.println("Show emp of the dep");
